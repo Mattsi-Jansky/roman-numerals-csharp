@@ -9,7 +9,9 @@ namespace roman_numerals_tests
         private static readonly (int, string)[] DecimalsMappedToRomanNumerals =
         {
             (1, "I"),
-            (2, "II")
+            (2, "II"),
+            (3, "III"),
+            (4, "IV")
         };
         
         [Theory, TestCaseSource(nameof(DecimalsMappedToRomanNumerals))]
