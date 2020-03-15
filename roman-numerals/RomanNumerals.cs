@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace roman_numerals
 {
@@ -6,7 +7,7 @@ namespace roman_numerals
     {
         public static string ParseFromDecimal(int n)
         {
-            return "I";
+            return new string(Enumerable.Range(1, n).Select(_ => 'I').ToArray());
         } 
     }
 }
