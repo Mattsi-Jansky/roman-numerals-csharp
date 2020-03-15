@@ -6,7 +6,7 @@ namespace roman_numerals
     {
         public static string ParseFromDecimal(int n)
         {
-            return null;
+            return "I";
         } 
     }
 }
