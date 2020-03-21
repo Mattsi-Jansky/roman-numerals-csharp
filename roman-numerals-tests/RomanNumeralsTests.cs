@@ -11,7 +11,7 @@ namespace roman_numerals_tests
             (1, "I"),
             (2, "II"),
             (3, "III"),
-            (4, "IV")
+            (5, "V")
         };
         
         [Theory, TestCaseSource(nameof(DecimalsMappedToRomanNumerals))]
