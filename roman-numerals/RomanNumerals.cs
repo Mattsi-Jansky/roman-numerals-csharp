@@ -22,16 +22,18 @@ namespace roman_numerals
 
             if (digit == 5)
             {
-                return ParseFromDecimal(RemoveFirstDigit(n),accumulator + PrintNTimes(Numerals[power * 5], 1));
+                accumulator = accumulator + PrintNTimes(Numerals[power * 5], 1);
             }
             else if (digit == 4)
             {
-                return ParseFromDecimal(RemoveFirstDigit(n),accumulator + Numerals[power] + Numerals[power * 5]);
+                accumulator = accumulator + Numerals[power] + Numerals[power * 5];
             }
             else
             {
-                return ParseFromDecimal(RemoveFirstDigit(n),accumulator + PrintNTimes(Numerals[power], digit));
+                accumulator = accumulator + PrintNTimes(Numerals[power], digit);
             }
+            
+            return ParseFromDecimal(RemoveFirstDigit(n), accumulator);
         }
 
         private static string PrintNTimes(char glyph, int n)
