@@ -19,7 +19,9 @@ namespace roman_numerals_tests
             (8, "VIII"),
             (9, "IX"),
             (10, "X"),
-            (11,"XI")
+            (11,"XI"),
+            (12,"XII"),
+            (13,"XIII"),
         };
         
         [Theory, TestCaseSource(nameof(DecimalsMappedToRomanNumerals))]
