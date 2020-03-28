@@ -31,6 +31,11 @@ namespace roman_numerals_tests
             (20,"XX"),
             (21,"XXI"),
             (40,"XL"),
+            (41,"XLI"),
+            (45,"XLV"),
+            (49,"XLIX"),
+            (50,"L"),
+            (90,"XC"),
         };
         
         [Theory, TestCaseSource(nameof(DecimalsMappedToRomanNumerals))]
