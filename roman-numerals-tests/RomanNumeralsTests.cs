@@ -36,6 +36,9 @@ namespace roman_numerals_tests
             (49,"XLIX"),
             (50,"L"),
             (90,"XC"),
+            (99,"XCIX"),
+            (100,"C"),
+            (400,"CD"),
         };
         
         [Theory, TestCaseSource(nameof(DecimalsMappedToRomanNumerals))]
