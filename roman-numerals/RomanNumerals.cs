@@ -10,7 +10,8 @@ namespace roman_numerals
         {
             { 1, 'I'},
             { 5, 'V'},
-            { 10, 'X'}
+            { 10, 'X'},
+            { 50, 'L'}
         };
         
         public static string ParseFromDecimal(int n, string accumulator = "")
