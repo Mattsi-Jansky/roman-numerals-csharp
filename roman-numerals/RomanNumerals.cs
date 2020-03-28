@@ -20,19 +20,13 @@ namespace roman_numerals
             var power = (int)Math.Pow(10, digits.Length - 1);
             var digit = int.Parse(digits[0].ToString());
 
-            if (digit == 5)
+            accumulator = digit switch
             {
-                accumulator = accumulator + PrintNTimes(Numerals[power * 5], 1);
-            }
-            else if (digit == 4)
-            {
-                accumulator = accumulator + Numerals[power] + Numerals[power * 5];
-            }
-            else
-            {
-                accumulator = accumulator + PrintNTimes(Numerals[power], digit);
-            }
-            
+                5 => (accumulator + PrintNTimes(Numerals[power * 5], 1)),
+                4 => (accumulator + Numerals[power] + Numerals[power * 5]),
+                _ => (accumulator + PrintNTimes(Numerals[power], digit))
+            };
+
             return ParseFromDecimal(RemoveFirstDigit(n), accumulator);
         }
 
