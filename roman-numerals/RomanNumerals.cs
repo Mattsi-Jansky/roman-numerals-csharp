@@ -22,6 +22,7 @@ namespace roman_numerals
 
             accumulator = digit switch
             {
+                9 => (accumulator + Numerals[power] + Numerals[power * 10]),
                 5 => (accumulator + Numerals[power * 5]),
                 4 => (accumulator + Numerals[power] + Numerals[power * 5]),
                 _ => (digit > 5) switch
