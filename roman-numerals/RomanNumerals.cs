@@ -24,7 +24,11 @@ namespace roman_numerals
             {
                 5 => (accumulator + PrintNTimes(Numerals[power * 5], 1)),
                 4 => (accumulator + Numerals[power] + Numerals[power * 5]),
-                _ => (accumulator + PrintNTimes(Numerals[power], digit))
+                _ => (digit > 5) switch
+                {
+                    true => (accumulator + Numerals[power * 5] + PrintNTimes(Numerals[power], digit - 5)),
+                    false => (accumulator + PrintNTimes(Numerals[power], digit))
+                }
             };
 
             return ParseFromDecimal(RemoveFirstDigit(n), accumulator);

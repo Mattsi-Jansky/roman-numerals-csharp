@@ -14,6 +14,7 @@ namespace roman_numerals_tests
             (3, "III"),
             (4, "IV"),
             (5, "V"),
+            (6, "VI"),
             (10, "X"),
             (11,"XI")
         };
