@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 using NUnit.Framework;
 using roman_numerals;
 
@@ -13,6 +14,7 @@ namespace roman_numerals_tests
             (3, "III"),
             (5, "V"),
             (10, "X"),
+            (11,"XI")
         };
         
         [Theory, TestCaseSource(nameof(DecimalsMappedToRomanNumerals))]
@@ -20,6 +22,22 @@ namespace roman_numerals_tests
         {
             var result = RomanNumerals.ParseFromDecimal(testCase.decimalFormat);
             Assert.AreEqual(testCase.romanFormat, result);
+        }
+
+        private static readonly (int, int)[] NumbersMappedToFirstDigitRemoved =
+        {
+            (1234, 234),
+            (234, 34),
+            (34, 4),
+            (4, 0)
+        };
+
+        [Theory, TestCaseSource(nameof(NumbersMappedToFirstDigitRemoved))]
+        public void RemoveFirstDigit_ShouldRemoveFirstDigitOfInteger((int input, int expectedResult) testCase)
+        {
+            var result = RomanNumerals.RemoveFirstDigit(testCase.input);
+
+            Assert.AreEqual(testCase.expectedResult, result);
         }
     }
 }
